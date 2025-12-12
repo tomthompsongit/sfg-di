@@ -13,7 +13,6 @@ public class SfgDi1Application {
         ApplicationContext ctx = SpringApplication.run(SfgDi1Application.class, args);
 
         MyController myController = ctx.getBean(MyController.class);
-        // MyController myController = ctx.getBean("myController");
         String greeting = myController.sayHello();
         System.out.println(greeting);
 	}
