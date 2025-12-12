@@ -1,6 +1,9 @@
 package guru.springframework.sfg_di_1;
 
+import guru.springframework.sfg_di_1.controllers.ConstructorInjectedController;
 import guru.springframework.sfg_di_1.controllers.MyController;
+import guru.springframework.sfg_di_1.controllers.PropertyInjectedController;
+import guru.springframework.sfg_di_1.controllers.SetterInjectedController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -15,6 +18,16 @@ public class SfgDi1Application {
         MyController myController = ctx.getBean(MyController.class);
         String greeting = myController.sayHello();
         System.out.println(greeting);
-	}
+        System.out.println("------ PropertyBasedContoller  with Springframework -------");
+        PropertyInjectedController controller = ctx.getBean(PropertyInjectedController.class);
+        System.out.println(controller.getGreeting());
+        System.out.println("------ SetterInjectedContoller  with Springframework -------");
+        SetterInjectedController setterInjectedController = ctx.getBean(SetterInjectedController.class);
+        System.out.println(setterInjectedController.getGreeting());
+        System.out.println("------ ConstructorInjectedController  with Springframework -------");
+        ConstructorInjectedController constructorInjectedController = ctx.getBean(ConstructorInjectedController.class);
+        System.out.println(constructorInjectedController.getGreeting());
+
+    }
 
 }
