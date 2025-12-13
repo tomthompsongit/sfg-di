@@ -16,6 +16,7 @@ public class SfgDi1Application {
         ApplicationContext ctx = SpringApplication.run(SfgDi1Application.class, args);
 
         MyController myController = ctx.getBean(MyController.class);
+        System.out.println("------ Primary Bean MyController  with Springframework -------");
         String greeting = myController.sayHello();
         System.out.println(greeting);
         System.out.println("------ PropertyBasedContoller  with Springframework -------");
